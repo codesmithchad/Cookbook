@@ -1,2 +1,2 @@
 # CookBook
-private iOS snippet storage
+a private iOS snippet storage

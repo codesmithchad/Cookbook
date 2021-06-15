@@ -25,6 +25,5 @@ final class ChangeNavigationBarBackgroundColorViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
         navigationController?.navigationBar.barTintColor = backgroundColor
-        
     }
 }

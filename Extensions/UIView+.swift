@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 extension UIView {
     func addSubviews(_ views: UIView...) {
@@ -25,5 +26,12 @@ extension UIView {
     func debugBounds(_ color: UIColor = .red, _ width: CGFloat = 1) {
         self.layer.borderWidth = width
         self.layer.borderColor = color.withAlphaComponent(0.6).cgColor
+        
+        let label = UILabel()
+        label.text = className()
+        addSubview(label)
+        label.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
     }
 }

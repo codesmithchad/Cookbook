@@ -2,6 +2,28 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+internal extension UIViewController {
+    func addChildren(_ viewControllers: UIViewController...) {
+        viewControllers.forEach({
+            addChild($0)
+            view.addSubview($0.view)
+            $0.didMove(toParent: self)
+        })
+    }
+
+    var safeInset: UIEdgeInsets? {
+        UIApplication.shared.windows.first?.safeAreaInsets
+    }
+
+    var topbarHeight: CGFloat {
+        navigationController?.navigationBar.frame.height ?? 0
+    }
+
+    var screen: CGSize {
+        UIScreen.main.bounds.size
+    }
+}
+
 extension UIViewController {
     enum NavigationButtonBarDataType {
         case image(UIImage)
